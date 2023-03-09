@@ -34,9 +34,9 @@ const App = ()=>{
         <div className={styles.leftSide}>
           <h1>Calcule o seu IMC.</h1>
           <p>IMC é a sigle para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa</p>
-          <input type="number" placeholder='Digite sua altura, ex: 1.7 (em metro)' value={heightField>0 ? heightField : ''} onChange={e=> setHeightField(parseFloat(e.target.value))} />
-          <input type="number" placeholder='Digite seu peso, ex: 65.5 (em kg)' value={weightField>0 ?  weightField : ''} onChange={e=> setWeightField(parseFloat(e.target.value))} />
-          <button onClick={handleCalculateButton}>Calcular</button>
+          <input type="number" placeholder='Digite sua altura, ex: 1.7 (em metro)' value={heightField>0 ? heightField : ''} onChange={e=> setHeightField(parseFloat(e.target.value))} disabled={toShow? true: false} />
+          <input type="number" placeholder='Digite seu peso, ex: 65.5 (em kg)' value={weightField>0 ?  weightField : ''} onChange={e=> setWeightField(parseFloat(e.target.value))} disabled={toShow? true: false} />
+          <button onClick={handleCalculateButton}  disabled={toShow? true: false}>Calcular</button>
         </div>
         <div className={styles.rightSide}>
           {!toShow && //o grid só aparecerá quando não houver toShow (o imc ainda não foi calculado)
